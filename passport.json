@@ -1,0 +1,290 @@
+{
+    "@context": "https://schema.org/",
+    "@type": "Certification",
+    "@id": "https://example.org/passport/PASSPORT123456789",
+    "description": "A certified digital record about a mission.",
+    "identifier": {
+        "@type": "PropertyValue",
+		"description": "OceanOPS Passport PID",
+        "propertyID": "https://example.org/OOP-123456789",
+        "value": "OOP-123456789"
+    },
+    "certificationStatus": "CertificationInactive",
+    "datePublished": "2023-06-30T00:00:00Z",
+	"issuedBy":  {
+    	"@type": "Organization",
+        "name": "OceanOPS",
+		"identifier": {
+			"@type": "PropertyValue",
+			"description": "OceanExpert ID",
+			"value": "16741",
+			"url": "https://oceanexpert.org/institution/16741"
+		}
+	},
+    "about": {
+        "@type": "Action",
+        "@id": "https://example.org/mission/MISSION123456789",
+        "description": "An ocean observation mission to gather and transmit data.",
+        "identifier": "MISSION123456789",
+        "startTime": "2024-01-01T00:00:00Z",
+        "endTime": "2024-06-30T00:00:00Z",
+        "actionStatus": "ActiveActionStatus",
+        "instrument": {
+            "@type": "IndividualProduct",
+            "@id": "https://example.org/platform/PLA123456789",
+            "identifier": {
+                "@type": "PropertyValue",
+				"description": "WIGOS-ID",
+                "propertyID": "https://community.wmo.int/en/activity-areas/WIGOS/implementation-WIGOS/WIGOS-station-identifier",
+                "value": "0-20000-0-6374034"
+            },
+            "serialNumber": "SN123456",
+            "model": {
+                "@type": "ProductModel",
+                "@id": "https://example.org/platform_model/PLM123456789",
+                "identifier": "PLM123456789",
+                "name": "APEX",
+                "isVariantOf": {
+                    "@type": "ProductModel",
+                    "@id": "https://example.org/platform_type/PTY123456789",
+                    "id": "PTY123456789",
+                    "name": "Argo Float"
+                },
+                "manufacturer": {
+                    "@type": "Organization",
+                    "@id": "https://example.org/organization/ORG123456789",
+                    "identifier": "ORG123456789",
+                    "name": "Teledyne Marine",
+                    "description": "Manufacturer of marine sensors and platforms including APEX floats."
+                }
+            },
+			"potentialAction": {
+				"@type": "CommunicateAction",
+				"description": "Transmit data using a telecommunication device",
+				"actionStatus": "PotentialActionStatus",
+				"object": {
+					"@type": "IndividualProduct",
+					"@id": "https://example.org/telecom/TEL123456789",
+					"name": "Iridium Short Burst Data Modem",
+					"description": "Telecom device used for data transmission during the mission",
+					"identifier": {
+						"@type": "PropertyValue",
+						"description": "OceanOPS Unique Telecom Identifier",
+						"propertyID": "https://example.org/...",
+						"value": "TEL123456789"
+					},
+					"additionalProperty": [
+						{
+                            "@type": "PropertyValue",
+							"description": "IMEI",
+                            "propertyID": "https://en.wikipedia.org/wiki/International_Mobile_Equipment_Identity",
+                            "value": "300234010753370"
+                        }
+					],
+					"telephone": "881612345678"
+				}
+			}
+        },
+        "provider": {
+            "@type": "Organization",
+            "@id": "https://example.org/program/argo-france",
+            "description": "WIGOS Program responsible for mission",
+            "propertyID": "https://github.com/wmo-im/wmds/blob/master/tables_en/2-02.csv",
+            "identifier": {
+                "@type": "PropertyValue",
+				"description": "WMDS 2-02 Notation",
+                "propertyID": "https://github.com/wmo-im/wmds/blob/master/tables_en/2-02.csv",
+                "value": "argoFrance"
+            },
+            "name": "Argo France",
+            "countryOfOrigin": {
+                "@type": "Country",
+                "@id": "https://example.org/country/fr",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "description": "Two-letter country code (ISO 3166-1 alpha-2)",
+                    "propertyID": "https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2",
+                    "value": "FR"
+                },
+                "name": "France"
+            }
+        },
+        "potentialAction": [
+            {
+                "@type": "Action",
+                "@id": "https://example.org/sensorSetup/OOSS-3453435435",
+                "description": "Configuration of a sensor to measure a specific variable",
+                "identifier": {
+                    "@type": "PropertyValue",
+                    "description": "OceanOPS Unique Identifier for Sensor Setup",
+                    "propertyID": "https://example.org/..",
+                    "value": "OOSS-3453435435"
+                },
+                "actionStatus": "PotentialActionStatus",
+                "startTime": "2024-01-01T12:00:00Z",
+                "endTime": "2024-06-30T00:00:00Z",
+                "instrument": {
+					"@type": "IndividualProduct",
+					"@id": "https://example.org/sensor/SEN123456789",
+					"description": "Individual sensor - physical instance",
+					"serialNumber": "SN123456",
+					"model": {
+						"@type": "ProductModel",
+						"identifier": "PLM123456789",
+						"name": "SBE 63",
+						"manufacturer": {
+							"@type": "Organization",
+							"identifier": "ORG123456789",
+							"name": "Seabird"
+						}
+					}
+                },
+                "object": {
+                    "@type": "DefinedTerm",
+                    "name": "sea surface layer",
+                    "url": "http://purl.obolibrary.org/obo/ENVO_01001581",
+                    "termCode": "ENVO:01001581"
+                },
+                "result": {
+                    "@type": "Dataset",
+                    "variableMeasured": [
+                        {
+                            "@type": "PropertyValue",
+                            "name": "Sea State",
+                            "description": "Sea State is the characterization of wave and swell, typically in terms of height, wavelength, period, and directional wave energy flux ",
+                            "propertyID": "http://purl.obolibrary.org/obo/ENVO_01001374"
+                        }
+                    ]
+                }
+            }
+        ],
+        "result": {
+            "@type": "Dataset",
+            "identifier": "OBS-TEMP-001",
+            "variableMeasured": {
+                "@type": "PropertyValue",
+                "name": "Sea State",
+                "description": "Sea State is the characterization of wave and swell, typically in terms of height, wavelength, period, and directional wave energy flux ",
+                "propertyID": "http://purl.obolibrary.org/obo/ENVO_01001374"
+            },
+            "dateCreated": "2024-02-15T06:30:00Z",
+            "locationCreated": {
+                "@type": "Place",
+                "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": -30.25,
+                    "longitude": 140.75,
+                    "elevation": -2000
+                }
+            }
+        },
+        "subjectOf": [
+            {
+                "@type": "Event",
+                "name": "Start of mission",
+                "about": {
+                    "@type": "ActivateAction",
+                    "identifier": "ACT-001",
+                    "startTime": "2024-01-01T12:00:00Z",
+                    "location": {
+                        "@type": "Place",
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": -30.25,
+                            "longitude": 140.75,
+                            "elevation": 0
+                        }
+                    },
+                    "instrument": {
+                        "@type": "Vehicle",
+                        "name": "Thalassa",
+                        "description": "Vessel used to deploy the platform",
+                        "callSign": "FTTH",
+                        "identifier": [
+                            {
+                                "@type": "PropertyValue",
+                                "propertyID": "UID",
+                                "value": "SHIP123456"
+                            }
+                        ],
+						"additionalProperty": [
+							{
+                                "@type": "PropertyValue",
+								"description": "IMO Number",
+                                "propertyID": "https://en.wikipedia.org/wiki/IMO_number",
+                                "value": "9231234"
+                            },
+                            {
+                                "@type": "PropertyValue",
+								"description": "ICES Code",
+                                "propertyID": "https://vocab.nerc.ac.uk/collection/C17/current/",
+                                "value": "FR1234"
+                            }
+						]
+                    }
+                }
+            },
+            {
+                "@type": "Event",
+                "name": "End of mission",
+                "about": {
+                    "@type": "DeactivateAction",
+                    "description": "Operation ending the mission.",
+                    "identifier": "DEA-001",
+                    "startTime": "2024-06-30T09:00:00Z",
+                    "location": {
+                        "@type": "Place",
+                        "geo": {
+                            "@type": "GeoCoordinates",
+                            "latitude": -30.25,
+                            "longitude": 140.75,
+                            "elevation": 0
+                        }
+                    }
+                }
+            }
+        ]
+    },
+	"hasPart": {
+   		"@type": "CreativeWork",
+		"name": "Log",
+		"mainEntity": [
+			{
+				"@type": "EventSeries",
+				"name": "Mission Status History",
+				"subEvent": [
+					{
+					"@type": "Event",
+					"startDate": "2024-01-01",
+					"eventStatus": "EventScheduled",
+					"name": "Mission Activated"
+					},
+					{
+					"@type": "Event",
+					"startDate": "2024-06-30",
+					"eventStatus": "EventCompleted",
+					"name": "Mission Deactivated"
+					}
+				]
+			},
+			{
+				"@type": "EventSeries",
+				"name": "Metadata Update History",
+				"subEvent": [
+					{
+					"@type": "Event",
+					"startDate": "2024-04-01",
+					"name": "Sensor updated",
+					"description": "Sensor model changed to PLM123456789"
+					},
+					{
+					"@type": "Event",
+					"startDate": "2024-05-10",
+					"name": "Metadata correction",
+					"description": "Location corrected"
+					}
+				]
+			}
+		]
+	}
+}
